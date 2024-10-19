@@ -22,8 +22,8 @@ const Navbar = () => {
     { title: "TrackSuits", path: "/404" },
   ];
   return (
-    <header className='w-screen xl:px-28 px-4 absolute top-0 right-0 left-0'>
-      <nav className='flex justify-between items-center  md:py-4 pt-6 pb-3'>
+    <header className='w-screen xl:px-28 px-4  absolute top-0 right-0 left-0'>
+      <nav className='flex justify-between items-center  md: pt-6 pb-3'>
         <a href="/">
           <img src={logo} height={100} width={100} alt="" />
         </a>

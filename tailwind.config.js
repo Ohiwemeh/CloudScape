@@ -9,6 +9,9 @@ export default {
       colors:{
         "black": "#1E2832",
         "primaryBG" : "#1e28320d"
+      },
+      fontFamily:{
+        
       }
     },
   },

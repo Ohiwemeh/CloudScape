@@ -39,7 +39,7 @@ const SingleProduct = () => {
                 {/* products  */}
                 <div>
                     <h1 className='title'>{title}</h1>
-                    <p className='mt-3 text-gray-600 text-base leading-6 text-justify sm:text-left sm:mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fugiat nulla, doloribus adipisci ipsam magnam dignissimos odit natus fuga eveniet repudiandae pariatur explicabo, culpa, laborum libero facere doloremque dolorum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam dolorem repellendus pariatur eum! Vel quibusdam numquam nam, illum quasi porro, ipsam, ea eaque soluta autem adipisci consequatur. Iusto, fugiat impedit.</p>
+                    <p className='mt-3 text-gray-600 text-base leading-6 text-justify sm:text-left sm:mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fugiat nulla, doloribus .</p>
                     <span className='my-2 text-xl text-yellow-400 flex items-center gap-1 sm:my-4'>
                         <FaStar/>
                         <FaStar/>
@@ -54,6 +54,16 @@ const SingleProduct = () => {
                         <label className='font-semibold'>Quality</label>
                         <input type="number" name='price' id='price' defaultValue={1} required className='border border-gray-300 tex-sm font-semibold mb-1 max-w-full w-full outline-none rounded-md m-0 py-3 px-4 md:py-3 md:px-4 focus:border-red-500' />
                     </div>
+                    <div className='text-left flex flex-col gap-2 w-full'>
+                        <label className='font-semibold'>Size</label>
+                        <select name='size' id='size'  required className='border border-gray-300 tex-sm font-semibold mb-1 max-w-full w-full outline-none rounded-md m-0 py-3 px-4 md:py-3 md:px-4 focus:border-red-500'>
+                          <option value="">X</option>
+                          <option value="">XL</option>
+                          <option value="">XXL</option>
+                          <option value="">3XL</option>
+                        </select>
+                    </div>
+                    
                     <div className='w-full text-left my-4'>
                         <button className='flex justify-center items-center gap-2 w-full py-3 px-4 bg-red-500 text-white font-bold border border-red-500 rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-white hover:text-red-500 lg:m-0 md:px-6
                         '><span>Comfirmed order</span><FaArrowAltCircleRight/></button>
