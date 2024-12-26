@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from "/image/Cloudy.png"
 
 
 const Footer = () => {
@@ -8,7 +9,7 @@ const Footer = () => {
             <div className='md:flex justify-between items-center'>
                 <div>
                     <div className='flex items-center gap-2'>
-                      <img src="src/images/Cloudy.png" height={50} width={50} alt="" />
+                      <img src={logo} height={50} width={50} alt="" />
                          <p className='text-2xl text-black font-bold'>CloudScape</p>
                     </div>
                     <div className='mt-5 leading-10'>
