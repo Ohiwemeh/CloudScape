@@ -8,7 +8,7 @@ const Footer = () => {
             <div className='md:flex justify-between items-center'>
                 <div>
                     <div className='flex items-center gap-2'>
-                    <commit_message></commit_message>   <img src="src/images/snapchat-1212615081-removebg-preview.png" height={50} width={50} alt="" />
+                      <img src="src/images/Cloudy.png" height={50} width={50} alt="" />
                          <p className='text-2xl text-black font-bold'>CloudScape</p>
                     </div>
                     <div className='mt-5 leading-10'>
