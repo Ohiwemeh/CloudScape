@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaSearch, FaShoppingBag, FaTimes } from "react-icons/fa";
 import { LiaUserSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
-import logo from "/public/image/snapchat-1212615081-removebg-preview.png";
+
 
 
 
@@ -25,7 +25,7 @@ const Navbar = () => {
     <header className='xl:px-28 px-4  absolute top-0 right-0 left-0'>
       <nav className='flex justify-between items-center  md:pt-6 pb-3'>
         <a href="/">
-          <img src={logo} height={100} width={100} alt="" />
+          <img src="src/images/snapchat-1212615081-removebg-preview.png" height={100} width={100} alt="" />
         </a>
         <div className="relative  hidden md:flex items-center">
           <FaSearch className="w-5 h-5 mr-2 absolute right-0  cursor-pointer hidden md:block text-gray-500"/>
