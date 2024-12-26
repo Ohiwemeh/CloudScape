@@ -22,8 +22,8 @@ const Navbar = () => {
     { title: "TrackSuits", path: "/404" },
   ];
   return (
-    <header className='w-screen xl:px-28 px-4  absolute top-0 right-0 left-0'>
-      <nav className='flex justify-between items-center  md: pt-6 pb-3'>
+    <header className='xl:px-28 px-4  absolute top-0 right-0 left-0'>
+      <nav className='flex justify-between items-center  md:pt-6 pb-3'>
         <a href="/">
           <img src={logo} height={100} width={100} alt="" />
         </a>
@@ -37,12 +37,18 @@ const Navbar = () => {
         <a href="/" className="flex items-center gap-2 hover:text-gray-700">
             <LiaUserSolid /> Account{" "}
           </a>
-          <a href="/" className="flex items-center gap-2 hover:text-gray-700">
-            <FaShoppingBag /> Cart{" "}
+       
+        <a href="/" className="flex items-center gap-2 hover:text-gray-700">
+           <div className="w-10 h-10 bg-gray-300 rounded-full flex justify-center items-center relative">
+           <FaShoppingBag /> 
+           <span className="absolute top-2/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center items-center">0</span>
+           </div> Cart {" "}
           </a>
+          
+       
         </div>
 
-          <button className="bg-black text-white h-12 w-32 rounded-lg text-white cursor-pointer hover:bg-gray-700">Outfit Viewer</button>
+          <button className="bg-black text-white h-12 w-32 rounded-lg cursor-pointer hover:bg-gray-700">Outfit Viewer</button>
         </div>
 
         {/* navbar for small devices */}
@@ -56,7 +62,7 @@ const Navbar = () => {
           </button>
         </div>
 
-
+ 
         
       </nav>
       <div>
