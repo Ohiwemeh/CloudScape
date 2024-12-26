@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from './Banner'
-import Category from './Category.Jsx'
+import Category from './Category.jsx'
 import Product from './Product'
 import Collection from './Collection'
 import BestSeller from './BestSeller'
