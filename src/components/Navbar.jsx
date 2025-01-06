@@ -1,82 +1,109 @@
 import React, { useState } from "react";
-import logo from "/image/Cloudy.png"
-import { FaBars, FaSearch, FaShoppingBag, FaTimes } from "react-icons/fa";
-import { LiaUserSolid } from "react-icons/lia";
-import { Link } from "react-router-dom";
+import logo from "/image/Cloudy.png";
+import { Dialog, DialogPanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+// import { FaBars, FaSearch, FaShoppingBag, FaTimes } from "react-icons/fa";
+// import { LiaUserSolid } from "react-icons/lia";
+// import { Link } from "react-router-dom";
 
-
-
+const navigation = [
+  { title: "Shirt", path: "/404" },
+  { title: "S-hoes", path: "/404" },
+  { title: "Hoodies", path: "/404" },
+  { title: "Trousers", path: "/404" },
+  { title: "Belts", path: "/404" },
+  { title: "TrackSuits", path: "/404" },
+];
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const navItems = [
-    { title: "Shirt", path: "/404",},
-    { title: "S-hoes", path: "/404" },
-    { title: "Hoodies", path: "/404" },
-    { title: "Trousers", path: "/404" },
-    { title: "Belts", path: "/404" },
-    { title: "TrackSuits", path: "/404" },
-  ];
+  
   return (
-    <header className='xl:px-28 px-4  absolute top-0 right-0 left-0'>
-      <nav className='flex justify-between items-center  md:pt-6 pb-3'>
-        <a href="/">
-          <img src={logo} height={100} width={100} alt="" />
+    <header className="absolute inset-x-0 top-0 z-50">
+    <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+      <div className="flex lg:flex-1">
+        <a href="#" className="-m-1.5 p-1.5">
+          <span className="sr-only">Your Company</span>
+          <img
+            alt=""
+            src={logo}
+            className="h-16 w-auto"
+          />
         </a>
-        <div className="relative  hidden md:flex items-center">
-          <FaSearch className="w-5 h-5 mr-2 absolute right-0  cursor-pointer hidden md:block text-gray-500"/>
-          <input type="text" name="search" placeholder="Search" autoComplete="off" aria-label="Search" className="  pl-3 h-12 w-96 rounded-2xl" />
-        </div>
-
-        <div className="text-lg text-black sm:flex items-center gap-16 hidden">
-        <div className="flex items-center gap-6">
-        <a href="/" className="flex items-center gap-2 hover:text-gray-700">
-            <LiaUserSolid /> Account{" "}
+      </div>
+      <div className="flex lg:hidden">
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen(true)}
+          className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+        >
+          <span className="sr-only">Open main menu</span>
+          <Bars3Icon aria-hidden="true" className="size-6" />
+        </button>
+      </div>
+      <div className="hidden lg:flex lg:gap-x-12">
+        {navigation.map((item) => (
+          <a key={item.title} href={item.path} className="text-sm/6 font-semibold text-gray-900">
+            {item.title}
           </a>
-       
-        <a href="/" className="flex items-center gap-2 hover:text-gray-700">
-           <div className="w-10 h-10 bg-gray-300 rounded-full flex justify-center items-center relative">
-           <FaShoppingBag /> 
-           <span className="absolute top-2/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center items-center">0</span>
-           </div> Cart {" "}
+        ))}
+      </div>
+      <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          Log in <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </nav>
+    <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
+      <div className="fixed inset-0 z-50" />
+      <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="flex items-center justify-between">
+          <a href="#" className="-m-1.5 p-1.5">
+            <span className="sr-only">Your Company</span>
+            <img
+            alt=""
+            src={logo}
+            className="h-16 w-auto"
+          />
           </a>
-          
-       
-        </div>
-
-          <button className="bg-black text-white h-12 w-32 rounded-lg cursor-pointer hover:bg-gray-700">Outfit Viewer</button>
-        </div>
-
-        {/* navbar for small devices */}
-        <div className="sm:hidden">
-          <button onClick={toggleMenu}>
-            {isMenuOpen ? (
-              <FaTimes className="w-5 h-5 text-black" />
-            ) : (
-              <FaBars className="w-5 h-5 text-black" />
-            )}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(false)}
+            className="-m-2.5 rounded-md p-2.5 text-gray-700"
+          >
+            <span className="sr-only">Close menu</span>
+            <XMarkIcon aria-hidden="true" className="size-6" />
           </button>
         </div>
+        <div className="mt-6 flow-root">
+          <div className="-my-6 divide-y divide-gray-500/10">
+            <div className="space-y-2 py-6">
+              {navigation.map((item) => (
+                <a
+                  key={item.title}
+                  href={item.path}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                >
+                  {item.title}
+                </a>
+              ))}
+            </div>
+            <div className="py-6">
+              <a
+                href="#"
+                className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+              >
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </DialogPanel>
+    </Dialog>
+  </header>
 
- 
-        
-      </nav>
-      <div>
-        <ul className="lg:flex items-center gap-20 justify-center text-black hidden ">
-          {navItems.map(({ title,path }) => (
-            <li key={title}  className="hover:text-orange-500">
-              <Link to={path} path="*">{title}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
